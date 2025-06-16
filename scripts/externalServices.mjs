@@ -32,7 +32,6 @@ export default class externalServices {
       `https://gnews.io/api/v4/search?q=${keyWord}&lang=en&apikey=` + apikey;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data.articles);
 
     data.articles.forEach(element => {
       newsDataList.push(element);
