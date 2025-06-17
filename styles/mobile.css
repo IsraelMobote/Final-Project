@@ -23,9 +23,15 @@ p {
     font-family: var(--paragraphFont);
 }
 
+h1 {
+    font-family: var(--paragraphFont);
+    text-align: center;
+}
+
 .newsCards {
     width: 95%;
-    margin: 0 auto;
+    margin: 1.5rem auto;
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 30%));
     justify-content: space-around;
@@ -64,6 +70,10 @@ p {
     div:hover {
         opacity: 0.5;
     }
+
+    span {
+        font-size: 4rem;
+    }
 }
 
 header {
@@ -97,7 +107,42 @@ header {
     }
 }
 
+form {
+    width: 80%;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+form>input {
+    font-size: 1.2rem;
+    width: 80%;
+    padding: 1rem;
+    margin-left: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--accent-two-color);
+}
+
+input[type=text]:focus {
+    border: 3px solid var();
+}
+
+form>button {
+    display: inline;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-radius: 12px;
+    background-color: var(--background-color);
+    color: var(--accent-two-color);
+    transition: background-color 1s, color 1s;
+}
+
+form>button:hover {
+    background-color: var(--accent-one-color);
+    color: var(--background-color);
+}
+
 footer p {
     text-align: center;
-    margin: 1rem 0;
 }

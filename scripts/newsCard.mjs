@@ -11,14 +11,10 @@ function getNewsCardTemplate(newsItem) {
         </div></a>`;
 }
 
-const newsList = getLocalStorage("NewsDataList");
-
 export default class NewsCard {
-    constructor() {
-        this.newsList = newsList;
-    }
 
     RenderNewsCards(parentElement) {
-        renderListWithTemplate(getNewsCardTemplate, parentElement, this.newsList);
+        const newsList = getLocalStorage("NewsDataList");
+        renderListWithTemplate(getNewsCardTemplate, parentElement, newsList);
     }
 }
