@@ -7,6 +7,9 @@
 }
 
 :root {
+    --background-color: #ffffff;
+    --accent-one-color: #4a2b7a;
+    --accent-two-color: #000000;
     --headingFont: 'Edu NSW ACT Hand Pre', Arial, cursive;
     --paragraphFont: 'Noto Serif', 'Times New Roman', Times, serif;
 }
@@ -61,4 +64,40 @@ p {
     div:hover {
         opacity: 0.5;
     }
+}
+
+header {
+    background-color: var(--accent-one-color);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-items: center;
+    padding: 1rem 5rem;
+
+    img {
+        width: 5.5rem;
+    }
+
+    div {
+        width: fit-content;
+
+        p {
+            font-family: var(--headingFont);
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--background-color);
+        }
+
+        p.italic {
+            font-family: var(--paragraphFont);
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+    }
+}
+
+footer p {
+    text-align: center;
+    margin: 1rem 0;
 }
