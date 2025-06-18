@@ -132,15 +132,80 @@ form>button {
     padding: 10px;
     margin-top: 1rem;
     margin-left: 1rem;
+    border: 2px solid var(--accent-one-color);
     border-radius: 12px;
     background-color: var(--background-color);
-    color: var(--accent-two-color);
+    color: var(--accent-one-color);
     transition: background-color 1s, color 1s;
 }
 
 form>button:hover {
     background-color: var(--accent-one-color);
     color: var(--background-color);
+}
+
+/*---------- Home Page Styling ---------*/
+
+.indexhtml {
+    text-align: center;
+
+    img {
+        width: 92%;
+        height: 30rem;
+        margin: 1.5rem auto;
+        justify-self: center;
+        background-color: aqua;
+        border-radius: 30px;
+    }
+}
+
+.homeSections {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+    width: 92%;
+    margin: 1rem auto 5rem;
+
+    section,
+    form {
+        width: 100%;
+        border: 2px solid var(--accent-one-color);
+        border-radius: 12px;
+        background-color: #c5b9d88a;
+        padding: 1rem 0;
+
+        img {
+            height: 10rem;
+            border-radius: 11px;
+            margin-top: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    form {
+
+        select,
+        button {
+            display: block;
+        }
+
+        label {
+            font-family: var(--headingFont);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        select {
+            width: 90%;
+            margin: 2rem auto;
+            padding: 0.8rem;
+            font-size: 1.13rem;
+        }
+    }
+
 }
 
 footer p {
