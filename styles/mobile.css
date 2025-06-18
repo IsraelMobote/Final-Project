@@ -37,11 +37,6 @@ h1 {
     justify-content: space-around;
     background-color: rgba(231, 223, 223, 0.562);
 
-    a {
-        color: black;
-        text-decoration: none;
-    }
-
     div {
         border: 2px solid black;
         border-radius: 25px;
@@ -159,6 +154,11 @@ form>button:hover {
     }
 }
 
+a {
+    text-decoration: none;
+    color: var(--accent-two-color);
+}
+
 .homeSections {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -182,7 +182,12 @@ form>button:hover {
 
         p {
             font-size: 1.1rem;
+            text-decoration: none;
         }
+    }
+
+    section:hover {
+        opacity: 0.5;
     }
 
     form {

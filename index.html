@@ -15,22 +15,28 @@
         alt="side view smiley people taking selfie"
       />
       <div class="homeSections">
-        <section class="globalnews">
-          <h2>Global News</h2>
-          <img
-            src="images/image showing the globe with the text (Global News Update) by the side.webp"
-            alt="image showing the globe with the text (Global News Update) by the side"
-          />
-          <p>Stay informed, stay ahead: Global news at your fingertips!</p>
-        </section>
-        <section class="countrynews">
-          <h2>Country News</h2>
-          <img
-            src="images/hands-waving-flags-china-germany-india-south-africa-russia.webp"
-            alt="hands waving flags china germany india south-africa russia"
-          />
-          <p>What's happening in your country? Stay up-to-date!</p>
-        </section>
+        <a href="news-list.html?query=trending">
+          <section class="globalnews">
+            <h2 id="noUnderline">Global News</h2>
+            <img
+              src="images/image showing the globe with the text (Global News Update) by the side.webp"
+              alt="image showing the globe with the text (Global News Update) by the side"
+            />
+            <p class="noUnderline">
+              Stay informed, stay ahead: Global news at your fingertips!
+            </p>
+          </section>
+        </a>
+        <a href="news-list.html?query=countryTrending">
+          <section class="countrynews" onclick="loadCountryNews()">
+            <h2>Country News</h2>
+            <img
+              src="images/hands-waving-flags-china-germany-india-south-africa-russia.webp"
+              alt="hands waving flags china germany india south-africa russia"
+            />
+            <p>What's happening in your country? Stay up-to-date!</p>
+          </section>
+        </a>
         <form>
           <label for="countrySelector">Select Country</label>
           <select name="countrySelector" id="countrySelector"></select>

@@ -26,3 +26,9 @@ function addOptionsToSelectElement(element, optionList) {
 
 const selectElement = document.querySelector("#countrySelector");
 addOptionsToSelectElement(selectElement, countries);
+
+const selectorForm = document.querySelector("form");
+selectorForm.addEventListener("submit", (element) => {
+    element.preventDefault();
+    window.location.href = `news-list.html?query=${selectElement.value}`
+});

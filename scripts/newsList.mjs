@@ -1,6 +1,7 @@
 import { loadHeaderFooter } from "./HeaderAndFooter.mjs";
 import NewsCard from "./newsCard.mjs";
 import externalServices from "./externalServices.mjs";
+import { getParam } from "./utils.mjs";
 
 const header = document.querySelector("#main-header");
 const footer = document.querySelector("#main-footer");
@@ -18,13 +19,9 @@ const newsCard = new NewsCard();
 form.addEventListener("submit", (element) => {
     element.preventDefault();
     newsCardsDiv.innerHTML = `<span>loading....</span>`;
-    UseInput();
+    loadNews(inputValue.value);
 })
 
-async function UseInput() {
-    //await services.getNewsDataList(inputValue.value);
-    newsCard.RenderNewsCards(newsCardsDiv);
-}
 
 export const countries = [
     "Afghanistan",
@@ -218,3 +215,11 @@ export const countries = [
     "Venezuela",
     "Vietnam",
     "Yemen"]
+
+const formQuery = getParam("query");
+loadNews(formQuery);
+
+async function loadNews(query) {
+    // await services.getNewsDataList(query);
+    newsCard.RenderNewsCards(newsCardsDiv);
+}
