@@ -220,6 +220,6 @@ const formQuery = getParam("query");
 loadNews(formQuery);
 
 async function loadNews(query) {
-    // await services.getNewsDataList(query);
+     await services.getNewsDataList(query);
     newsCard.RenderNewsCards(newsCardsDiv);
 }
