@@ -19,7 +19,13 @@ const newsCard = new NewsCard();
 form.addEventListener("submit", (element) => {
     element.preventDefault();
     newsCardsDiv.innerHTML = `<span>loading....</span>`;
-    loadNews(inputValue.value);
+
+    if (countries.includes(formQuery)) {
+        loadNews(inputValue.value, formQuery);
+    }
+    else {
+        loadNewsWithQuery(inputValue.value);
+    }
 })
 
 
@@ -216,10 +222,24 @@ export const countries = [
     "Vietnam",
     "Yemen"]
 
-const formQuery = getParam("query");
-loadNews(formQuery);
 
-async function loadNews(query) {
-     await services.getNewsDataList(query);
+const formQuery = getParam("query");
+
+if (formQuery == "country") {
+    console.log(services.getUserCountry());
+    loadNewsWithQuery(services.getUserCountry());
+}
+else {
+    loadNewsWithQuery(formQuery);
+
+}
+
+async function loadNews(query, country) {
+    await services.getCountryNewsList(query, country);
+    newsCard.RenderNewsCards(newsCardsDiv);
+}
+
+async function loadNewsWithQuery(query) {
+    await services.getNewsDataList(query);
     newsCard.RenderNewsCards(newsCardsDiv);
 }

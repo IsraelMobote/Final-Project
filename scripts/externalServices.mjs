@@ -9,17 +9,18 @@ export default class externalServices {
   }
 
   async getUserCountry() {
-    const ipAddress = await getIP();
+    const ipAddress = await this.getIP();
 
     console.log(ipAddress);
     const response = await fetch(
-      `http://api.ipstack.com/${ipAddress}?access_key=c2d7f743114fd0855e65edb1a9dba54b`
+      `http://api.ipstack.com/${ipAddress}?access_key=709123c461c485e1dffb03444d9c65be`
     );
     const data = await response.json();
 
     console.log(data);
 
     const country = data.country_name;
+    console.log(country);
 
     return country;
   }
@@ -43,11 +44,8 @@ export default class externalServices {
     return newsDataList;
   }
 
-  async getCountryNewsList(query) {
+  async getCountryNewsList(query, country) {
     let newsDataList = [];
-
-    //  country = await getUserCountry();
-    let country = "nigeria";
 
     const keyWord = `${country} ${query}`;
 
@@ -56,14 +54,12 @@ export default class externalServices {
       `https://gnews.io/api/v4/search?q=${keyWord}&lang=en&apikey=` + apikey;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
 
     data.articles.forEach(element => {
       newsDataList.push(element);
     });
 
-    console.log(newsDataList);
-    setLocalStorage("CountryNewsList", newsDataList)
+    setLocalStorage("NewsDataList", newsDataList)
 
     return newsDataList;
   }
