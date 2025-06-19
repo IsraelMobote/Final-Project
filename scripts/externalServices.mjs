@@ -19,7 +19,7 @@ export default class externalServices {
     const ipAddress = await this.getIP();
 
     const response = await fetch(
-      `http://api.ipstack.com/${ipAddress}?access_key=709123c461c485e1dffb03444d9c65be`
+      `https://api.ipstack.com/${ipAddress}?access_key=709123c461c485e1dffb03444d9c65be`
     );
     const data = await response.json();
 
