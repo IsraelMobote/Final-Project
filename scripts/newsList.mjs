@@ -224,6 +224,7 @@ export const countries = [
 
 
 const formQuery = getParam("query");
+
 if (formQuery) {
     if (formQuery == "country") {
         loadNewsWIthUserCountry();
@@ -234,16 +235,24 @@ if (formQuery) {
     }
 }
 
+// this function load news with the query and country parameter
+// it calls the getCountryNewsList function and gives it the parameters
 
 async function loadNews(query, country) {
     await services.getCountryNewsList(query, country);
     newsCard.RenderNewsCards(newsCardsDiv);
 }
 
+// this function load news with a query parameter
+// it calls the getNewsDataList function and gives it the query parameter.
+
 async function loadNewsWithQuery(query) {
     await services.getNewsDataList(query);
     newsCard.RenderNewsCards(newsCardsDiv);
 }
+
+// this function gets the user country from the getUserCountry function and
+// then uses the loadNewsWithQuery function to load the news cards with the country parameter as query.
 
 async function loadNewsWIthUserCountry() {
     const country = await services.getUserCountry();

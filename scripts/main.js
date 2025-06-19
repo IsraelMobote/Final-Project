@@ -3,11 +3,10 @@ import externalServices from "./externalServices.mjs";
 import { loadHeaderFooter } from "./HeaderAndFooter.mjs";
 import { countries } from "./newsList.mjs";
 
+// this is the function that is connected with the home page 
+// and calls the other functions required by the home page
+
 const services = new externalServices();
-
-//services.getNewsDataList("baseball");
-//services.getCountryNewsList("baseball");
-
 
 const header = document.querySelector("#main-header");
 const footer = document.querySelector("#main-footer");

@@ -1,5 +1,7 @@
 import { getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 
+// this is the function that contains the code that creates the News Cards in the news-list page 
+// it also renders the news cards in the desired parent Element.
 
 function getNewsCardTemplate(newsItem) {
 
