@@ -7,7 +7,22 @@ function getHeader() {
 }
 
 function getFooter() {
-  return `<p>©Finix Digital Ventures | 2025 | WDD 330</p>`;
+  return `<p>©Finix Digital Ventures | 2025 | WDD 330</p>
+   <div>
+        <p>References</p>
+        <a
+          href="https://www.freepik.com/free-photo/side-view-smiley-people-taking-selfie_28586237.htm"
+          >Image by freepik</a
+        >
+        <a
+          href="https://www.freepik.com/free-vector/global-news-update-illustration_416324643.htm"
+          >Image by brgfx on Freepik</a
+        >
+        <a
+          href="https://www.freepik.com/free-photo/hands-waving-flags-china-germany-india-south-africa-russia_2979572.htm"
+          >Image by rawpixel.com on Freepik</a
+        >
+      </div>`;
 }
 
 export function loadHeaderFooter(destinationHeader, destinationFooter) {
