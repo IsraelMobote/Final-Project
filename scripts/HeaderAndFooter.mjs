@@ -1,5 +1,5 @@
 function getHeader() {
-  return ` <img src="images/news.png" alt="news icon" />
+  return `<a href="index.html"><img src="images/news.png" alt="news icon" /></a>
       <div>
         <p>Cluster News</p>
         <p class="italic">News at your finger tips</p>
