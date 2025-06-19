@@ -25,4 +25,8 @@ export function getParam(param) {
 
 }
 
-
+export function returnToIndexPage(htmlElement) {
+  htmlElement.addEventListener("click", () => {
+    window.location.href = "index.html";
+  })
+}

@@ -103,14 +103,25 @@ header {
 }
 
 form {
-    width: 80%;
     text-align: center;
     margin: 2rem 0;
 }
 
+.hideLabelUntilUserInput {
+    display: none;
+    font-family: var(--paragraphFont);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+.hideLabelUntilUserInput.active {
+    display: block;
+}
+
 form>input {
     font-size: 1.2rem;
-    width: 80%;
+    width: 50%;
     padding: 1rem;
     margin-left: 2rem;
     border-radius: 12px;
@@ -121,6 +132,7 @@ input[type=text]:focus {
     border: 3px solid var();
 }
 
+/*--------- this styling controls the buttons in the form for the home page and the news-list page ----------*/
 form>button {
     display: inline;
     font-size: 1.2rem;
@@ -132,6 +144,21 @@ form>button {
     background-color: var(--background-color);
     color: var(--accent-one-color);
     transition: background-color 1s, color 1s;
+    animation: grow 2s infinite ease-in-out;
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.07);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 form>button:hover {
@@ -143,14 +170,34 @@ form>button:hover {
 
 .indexhtml {
     text-align: center;
+}
 
-    img {
-        width: 92%;
-        height: 30rem;
-        margin: 1.5rem auto;
-        justify-self: center;
-        background-color: aqua;
-        border-radius: 30px;
+
+.heroImage {
+    width: 92%;
+    height: 30rem;
+    margin: 1.5rem auto;
+    justify-self: center;
+    background-color: aqua;
+    border-radius: 30px;
+}
+
+.heroImage.animate {
+    animation: fadeandAppear 4s ease-in-out;
+}
+
+@keyframes fadeandAppear {
+    0% {
+
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
@@ -226,7 +273,7 @@ footer div {
     margin: 2rem 0;
 }
 
-footer div > a {
+footer div>a {
     font-family: Arial, Helvetica, sans-serif;
     display: block;
     color: blue;

@@ -1,17 +1,33 @@
 
 import externalServices from "./externalServices.mjs";
-import { loadHeaderFooter } from "./HeaderAndFooter.mjs";
+import { setHeaderFooter } from "./HeaderAndFooter.mjs";
 import { countries } from "./newsList.mjs";
+import { getLocalStorage, returnToIndexPage } from "./utils.mjs";
 
 // this is the function that is connected with the home page 
 // and calls the other functions required by the home page
 
 const services = new externalServices();
 
-const header = document.querySelector("#main-header");
-const footer = document.querySelector("#main-footer");
+setHeaderFooter();
 
-loadHeaderFooter(header, footer);
+const header = document.querySelector("#main-header");
+header.innerHTML = getLocalStorage("header");
+
+const footer = document.querySelector("#main-footer");
+footer.innerHTML = getLocalStorage("footer");
+
+const logo = document.querySelector('.logo');
+returnToIndexPage(logo);
+
+const heroImage = document.querySelector(".heroImage");
+
+heroImage.addEventListener("click", () => {
+    heroImage.classList.add("animate");
+    setTimeout(() => {
+        heroImage.classList.remove("animate");
+    }, 4000);
+})
 
 // code that inputs the countries as options for the select element in the home page form
 

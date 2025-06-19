@@ -1,20 +1,27 @@
-import { loadHeaderFooter } from "./HeaderAndFooter.mjs";
+
 import NewsCard from "./newsCard.mjs";
 import externalServices from "./externalServices.mjs";
-import { getParam } from "./utils.mjs";
+import { getLocalStorage, getParam, returnToIndexPage } from "./utils.mjs";
 
 const header = document.querySelector("#main-header");
-const footer = document.querySelector("#main-footer");
+header.innerHTML = getLocalStorage("header");
 
-loadHeaderFooter(header, footer);
+const footer = document.querySelector("#main-footer");
+footer.innerHTML = getLocalStorage("footer");
+
+const logo = document.querySelector('.logo');
+returnToIndexPage(logo);
 
 const form = document.querySelector("form");
-const inputValue = document.querySelector("input");
+const inputValue = document.querySelector("#searchParameter");
+const label = document.querySelector("label");
 
 const newsCardsDiv = document.querySelector(".newsCards");
 
 const services = new externalServices();
 const newsCard = new NewsCard();
+
+
 
 form.addEventListener("submit", (element) => {
     element.preventDefault();
@@ -228,9 +235,17 @@ const formQuery = getParam("query");
 if (formQuery) {
     if (formQuery == "country") {
         loadNewsWIthUserCountry();
+
+        inputValue.addEventListener("input", () => {
+            label.classList.add("active");
+        })
     }
     else {
         loadNewsWithQuery(formQuery);
+
+        inputValue.addEventListener("input", () => {
+            label.classList.add("active");
+        })
 
     }
 }
