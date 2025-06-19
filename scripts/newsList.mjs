@@ -224,15 +224,16 @@ export const countries = [
 
 
 const formQuery = getParam("query");
+if (formQuery) {
+    if (formQuery == "country") {
+        loadNewsWIthUserCountry();
+    }
+    else {
+        loadNewsWithQuery(formQuery);
 
-if (formQuery == "country") {
-    console.log(services.getUserCountry());
-    loadNewsWithQuery(services.getUserCountry());
+    }
 }
-else {
-    loadNewsWithQuery(formQuery);
 
-}
 
 async function loadNews(query, country) {
     await services.getCountryNewsList(query, country);
@@ -242,4 +243,9 @@ async function loadNews(query, country) {
 async function loadNewsWithQuery(query) {
     await services.getNewsDataList(query);
     newsCard.RenderNewsCards(newsCardsDiv);
+}
+
+async function loadNewsWIthUserCountry() {
+    const country = await services.getUserCountry();
+    loadNewsWithQuery(country);
 }

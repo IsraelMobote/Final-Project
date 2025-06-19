@@ -11,16 +11,12 @@ export default class externalServices {
   async getUserCountry() {
     const ipAddress = await this.getIP();
 
-    console.log(ipAddress);
     const response = await fetch(
       `http://api.ipstack.com/${ipAddress}?access_key=709123c461c485e1dffb03444d9c65be`
     );
     const data = await response.json();
 
-    console.log(data);
-
     const country = data.country_name;
-    console.log(country);
 
     return country;
   }
@@ -38,7 +34,6 @@ export default class externalServices {
       newsDataList.push(element);
     });
 
-    console.log(newsDataList);
     setLocalStorage("NewsDataList", newsDataList)
 
     return newsDataList;

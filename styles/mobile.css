@@ -1,218 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --background-color: #ffffff;
-    --accent-one-color: #4a2b7a;
-    --accent-two-color: #000000;
-    --headingFont: 'Edu NSW ACT Hand Pre', Arial, cursive;
-    --paragraphFont: 'Noto Serif', 'Times New Roman', Times, serif;
-}
-
-h1,
-h2 {
-    font-family: var(--headingFont);
-}
-
-p {
-    font-family: var(--paragraphFont);
-}
-
-h1 {
-    font-family: var(--paragraphFont);
-    text-align: center;
-}
-
-.newsCards {
-    width: 95%;
-    margin: 1.5rem auto;
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 30%));
-    justify-content: space-around;
-    background-color: rgba(231, 223, 223, 0.562);
-
-    div {
-        border: 2px solid black;
-        border-radius: 25px;
-        text-align: center;
-        padding: 10px 0;
-        margin: 0.7rem 0;
+@media screen and (max-width: 500px) {
+    header {
+        display: grid;
+        grid-template-columns: 1fr;
 
         img {
-            width: 90%;
-            height: auto;
-            margin: 0 auto;
-            border-radius: 15px;
+            margin-bottom: 2rem;
         }
 
-        h2 {
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 0.9rem;
+        div p {
+            text-align: center;
         }
     }
 
-    div:hover {
-        opacity: 0.5;
+    .homeSections {
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
-    span {
-        font-size: 4rem;
+    /*----------- News Cards styling ----------*/
+
+    .newsCards {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr;
     }
-}
-
-header {
-    background-color: var(--accent-one-color);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-items: center;
-    padding: 1rem 5rem;
-
-    img {
-        width: 5.5rem;
-    }
-
-    div {
-        width: fit-content;
-
-        p {
-            font-family: var(--headingFont);
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--background-color);
-        }
-
-        p.italic {
-            font-family: var(--paragraphFont);
-            font-size: 1.5rem;
-            font-weight: 500;
-            font-style: italic;
-        }
-
-    }
-}
-
-form {
-    width: 80%;
-    text-align: center;
-    margin: 2rem 0;
-}
-
-form>input {
-    font-size: 1.2rem;
-    width: 80%;
-    padding: 1rem;
-    margin-left: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--accent-two-color);
-}
-
-input[type=text]:focus {
-    border: 3px solid var();
-}
-
-form>button {
-    display: inline;
-    font-size: 1.2rem;
-    padding: 10px;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    border: 2px solid var(--accent-one-color);
-    border-radius: 12px;
-    background-color: var(--background-color);
-    color: var(--accent-one-color);
-    transition: background-color 1s, color 1s;
-}
-
-form>button:hover {
-    background-color: var(--accent-one-color);
-    color: var(--background-color);
-}
-
-/*---------- Home Page Styling ---------*/
-
-.indexhtml {
-    text-align: center;
-
-    img {
-        width: 92%;
-        height: 30rem;
-        margin: 1.5rem auto;
-        justify-self: center;
-        background-color: aqua;
-        border-radius: 30px;
-    }
-}
-
-a {
-    text-decoration: none;
-    color: var(--accent-two-color);
-}
-
-.homeSections {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2.5rem;
-    width: 92%;
-    margin: 1rem auto 5rem;
-
-    section,
-    form {
-        width: 100%;
-        border: 2px solid var(--accent-one-color);
-        border-radius: 12px;
-        background-color: #c5b9d88a;
-        padding: 1rem 0;
-
-        img {
-            height: 10rem;
-            border-radius: 11px;
-            margin-top: 1rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            text-decoration: none;
-        }
-    }
-
-    section:hover {
-        opacity: 0.5;
-    }
-
-    form {
-
-        select,
-        button {
-            display: block;
-        }
-
-        label {
-            font-family: var(--headingFont);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        select {
-            width: 90%;
-            margin: 2rem auto;
-            padding: 0.8rem;
-            font-size: 1.13rem;
-        }
-    }
-
-}
-
-footer p {
-    text-align: center;
 }
