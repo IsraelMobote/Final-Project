@@ -9,8 +9,11 @@ header.innerHTML = getLocalStorage("header");
 const footer = document.querySelector("#main-footer");
 footer.innerHTML = getLocalStorage("footer");
 
-const logo = document.querySelector('.logo');
-returnToIndexPage(logo);
+if (getLocalStorage("header")) {
+    const logo = document.querySelector('.logo');
+    returnToIndexPage(logo);
+}
+
 
 const form = document.querySelector("form");
 const inputValue = document.querySelector("#searchParameter");
